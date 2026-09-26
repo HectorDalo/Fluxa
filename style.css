@@ -1,0 +1,2034 @@
+/* =========================================
+   VARIÁVEIS
+========================================= */
+
+:root {
+
+    --fundo: #05070a;
+    --fundo-secundario: #080d12;
+    --azul: #00cfff;
+    --azul-claro: #66e5ff;
+    --branco: #ffffff;
+    --cinza: #a7b0ba;
+    --cinza-escuro: #68737d;
+    --borda: rgba(0, 207, 255, 0.25);
+    --card: rgba(10, 20, 28, 0.78);
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background: var(--fundo);
+    color: var(--branco);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+}
+
+img {
+
+    max-width: 100%;
+
+}
+
+a {
+
+    color: inherit;
+    text-decoration: none;
+
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho {
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(5, 7, 10, 0.92);
+
+    border-bottom: 1px solid rgba(0, 207, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+
+}
+
+.logo {
+
+    color: var(--azul);
+
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(0, 207, 255, 0.5);
+
+}
+
+.navegacao {
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.navegacao a {
+
+    position: relative;
+
+    color: var(--cinza);
+
+    font-size: 0.9rem;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+.navegacao a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--azul);
+
+    box-shadow:
+        0 0 8px var(--azul);
+
+    transition:
+        width 0.3s ease;
+
+}
+
+.navegacao a:hover {
+
+    color: var(--branco);
+
+}
+
+.navegacao a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 88vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 7%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 207, 255, 0.10),
+            transparent 45%
+        );
+
+}
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 207, 255, 0.04);
+
+    border: 1px solid rgba(0, 207, 255, 0.08);
+
+    box-shadow:
+        0 0 100px rgba(0, 207, 255, 0.05);
+
+}
+
+.hero-conteudo {
+
+    position: relative;
+
+    max-width: 900px;
+
+    z-index: 1;
+
+}
+
+.hero-tag {
+
+    display: inline-block;
+
+    color: var(--azul);
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+.hero h1 {
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    font-weight: 900;
+
+}
+
+.hero h1 span {
+
+    color: var(--azul);
+
+    text-shadow:
+        0 0 20px rgba(0, 207, 255, 0.45);
+
+}
+
+.hero p {
+
+    max-width: 720px;
+
+    margin: 0 auto 35px;
+
+    color: var(--cinza);
+
+    font-size: 1.1rem;
+
+}
+
+.botao {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    color: #001116;
+
+    background: var(--azul);
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 20px rgba(0, 207, 255, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.botao:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.45);
+
+}
+
+
+/* =========================================
+   SEÇÕES
+========================================= */
+
+.secao {
+
+    padding: 100px 7%;
+
+    background: var(--fundo);
+
+}
+
+.secao-escura {
+
+    background: var(--fundo-secundario);
+
+}
+
+.titulo-secao {
+
+    max-width: 850px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+}
+
+.titulo-secao > span {
+
+    display: block;
+
+    color: var(--azul);
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+.titulo-secao h2 {
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    margin-bottom: 15px;
+
+}
+
+.titulo-secao p {
+
+    color: var(--cinza);
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+.card {
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.90),
+            rgba(5, 10, 15, 0.96)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(0, 207, 255, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.10);
+
+}
+
+.card h3 {
+
+    color: var(--azul);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 15px;
+
+}
+
+.card p {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   INFO BLOCO
+========================================= */
+
+.info-bloco {
+
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+}
+
+.info-bloco h3 {
+
+    color: var(--azul);
+
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+}
+
+.info-bloco h3:first-child {
+
+    margin-top: 0;
+
+}
+
+.info-bloco p {
+
+    color: var(--cinza);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   PROBLEMA
+========================================= */
+
+.problema-conteudo {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+.texto {
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+.texto h3 {
+
+    color: var(--azul);
+
+    font-size: 1.7rem;
+
+    margin-bottom: 20px;
+
+}
+
+.texto p {
+
+    color: var(--cinza);
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================
+   FLUXOS
+========================================= */
+
+.fluxo {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.fluxo-item {
+
+    min-width: 180px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    background:
+        rgba(10, 20, 28, 0.85);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 20px rgba(0, 207, 255, 0.04);
+
+}
+
+.fluxo-item strong {
+
+    display: block;
+
+    color: var(--branco);
+
+    margin-bottom: 7px;
+
+}
+
+.fluxo-item span {
+
+    color: var(--cinza);
+
+    font-size: 0.85rem;
+
+}
+
+.fluxo-item.destaque {
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 25px rgba(0, 207, 255, 0.12);
+
+}
+
+.fluxo-item.destaque strong {
+
+    color: var(--azul);
+
+}
+
+.fluxo-seta {
+
+    color: var(--azul);
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
+
+}
+
+.fluxo-solucao {
+
+    margin-bottom: 50px;
+
+}
+
+
+/* =========================================
+   ESTATÍSTICAS
+========================================= */
+
+.estatisticas {
+
+    max-width: 1200px;
+
+    margin: 0 auto 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+.estatistica {
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+}
+
+.estatistica strong {
+
+    display: block;
+
+    color: var(--azul);
+
+    font-size: 2.5rem;
+
+    line-height: 1;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 15px rgba(0, 207, 255, 0.25);
+
+}
+
+.estatistica span {
+
+    color: var(--cinza);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* =========================================
+   GRÁFICOS
+========================================= */
+
+.graficos {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+.card-grafico {
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.card-grafico h3 {
+
+    color: var(--branco);
+
+    margin-bottom: 5px;
+
+}
+
+.card-grafico > p {
+
+    color: var(--cinza-escuro);
+
+    font-size: 0.85rem;
+
+    margin-bottom: 15px;
+
+}
+
+.grafico {
+
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+.grafico svg {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    overflow: visible;
+
+}
+
+.resultado-detalhes {
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+}
+
+.resultado-detalhes h3 {
+
+    color: var(--azul);
+
+    margin-bottom: 20px;
+
+}
+
+.resultado-detalhes ul {
+
+    padding-left: 22px;
+
+}
+
+.resultado-detalhes li {
+
+    color: var(--cinza);
+
+    margin-bottom: 14px;
+
+    line-height: 1.7;
+
+}
+
+.resultado-detalhes strong {
+
+    color: var(--branco);
+
+}
+
+
+/* =========================================
+   TABELAS
+========================================= */
+
+.tabela-container {
+
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    background:
+        rgba(5, 10, 15, 0.85);
+
+    box-shadow:
+        0 0 25px rgba(0, 207, 255, 0.04);
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+
+}
+
+th {
+
+    padding: 18px 15px;
+
+    color: var(--azul);
+
+    background:
+        rgba(0, 207, 255, 0.06);
+
+    border-bottom: 1px solid var(--borda);
+
+    text-align: left;
+
+    font-size: 0.9rem;
+
+}
+
+td {
+
+    padding: 18px 15px;
+
+    color: var(--cinza);
+
+    border-bottom: 1px solid rgba(0, 207, 255, 0.08);
+
+    vertical-align: top;
+
+    font-size: 0.9rem;
+
+}
+
+tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+td strong {
+
+    color: var(--branco);
+
+}
+
+
+/* =========================================
+   BUSINESS MODEL CANVAS
+========================================= */
+
+.canvas-area,
+.swot-area {
+
+    margin-top: 70px;
+
+}
+
+.subtitulo-modelo {
+
+    max-width: 800px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+
+}
+
+.subtitulo-modelo span {
+
+    display: block;
+
+    color: var(--azul);
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+.subtitulo-modelo h3 {
+
+    color: var(--branco);
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+}
+
+.subtitulo-modelo p {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   CANVAS — 9 BLOCOS
+========================================= */
+
+.canvas-grid {
+
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+.canvas-bloco {
+
+    min-height: 200px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(0, 207, 255, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.canvas-bloco:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.12);
+
+}
+
+.canvas-bloco h4 {
+
+    color: var(--azul);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 15px;
+
+}
+
+.canvas-bloco p {
+
+    color: var(--cinza);
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   DESTAQUE — PROPOSTA DE VALOR
+========================================= */
+
+.canvas-bloco.destaque {
+
+    border-color: rgba(0, 207, 255, 0.65);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 207, 255, 0.10),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.08);
+
+}
+
+.canvas-bloco.destaque h4 {
+
+    color: var(--azul-claro);
+
+}
+
+
+/* =========================================
+   SWOT / FOFA
+========================================= */
+
+.swot {
+
+    max-width: 1200px;
+
+    margin: 20px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+.swot-card {
+
+    position: relative;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 25px rgba(0, 207, 255, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.swot-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.12);
+
+}
+
+.swot-numero {
+
+    display: inline-block;
+
+    color: var(--azul);
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+}
+
+.swot-card h3 {
+
+    color: var(--branco);
+
+    font-size: 1.4rem;
+
+    margin-bottom: 20px;
+
+}
+
+.swot-card ul {
+
+    margin: 0;
+
+    padding-left: 20px;
+
+}
+
+.swot-card li {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+
+}
+
+.swot-card li::marker {
+
+    color: var(--azul);
+
+}
+
+
+/* =========================================
+   MVP — PROTÓTIPO FLUXA
+========================================= */
+
+.mvp-demo {
+
+    max-width: 850px;
+
+    margin: 40px auto 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.08);
+
+    overflow: hidden;
+
+}
+
+
+/* Cabeçalho do protótipo */
+
+.mvp-cabecalho {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px;
+
+    background:
+        rgba(0, 207, 255, 0.04);
+
+    border-bottom:
+        1px solid rgba(0, 207, 255, 0.12);
+
+}
+
+.mvp-logo {
+
+    color: var(--azul);
+
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(0, 207, 255, 0.4);
+
+}
+
+.mvp-status {
+
+    color: var(--cinza-escuro);
+
+    font-size: 0.8rem;
+
+}
+
+
+/* Conteúdo interno */
+
+.mvp-demo .mvp-conteudo {
+
+    max-width: none;
+
+    margin: 0;
+
+    display: block;
+
+    padding: 40px 35px;
+
+    text-align: center;
+
+}
+
+.mvp-demo .mvp-conteudo h3 {
+
+    color: var(--branco);
+
+    font-size: 1.6rem;
+
+    margin-bottom: 12px;
+
+}
+
+.mvp-demo .mvp-conteudo > p {
+
+    color: var(--cinza);
+
+    margin-bottom: 28px;
+
+}
+
+
+/* Botão de selecionar arquivo */
+
+.mvp-botao {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    color: #001116;
+
+    background: var(--azul);
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(0, 207, 255, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.mvp-botao:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.45);
+
+}
+
+#arquivo {
+
+    display: none;
+
+}
+
+
+/* Arquivo selecionado */
+
+.arquivo-selecionado {
+
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    padding: 15px;
+
+    min-height: 20px;
+
+    color: var(--branco);
+
+    background:
+        rgba(10, 20, 28, 0.7);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 10px;
+
+}
+
+
+/* Barra de progresso */
+
+.progresso-container {
+
+    display: none;
+
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    text-align: left;
+
+}
+
+.progresso-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: var(--cinza);
+
+    font-size: 0.85rem;
+
+}
+
+.progresso-barra {
+
+    width: 100%;
+
+    height: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.progresso {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--azul-claro)
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 12px rgba(0, 207, 255, 0.5);
+
+}
+
+
+/* Resultado do upload */
+
+.resultado-upload {
+
+    display: none;
+
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 207, 255, 0.04);
+
+    border:
+        1px solid rgba(0, 207, 255, 0.2);
+
+    border-radius: 12px;
+
+}
+
+.resultado-upload p {
+
+    color: var(--azul-claro);
+
+    margin-bottom: 15px;
+
+}
+
+.link-gerado {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+#link-fluxa {
+
+    flex: 1;
+
+    padding: 12px;
+
+    background: #030507;
+
+    border:
+        1px solid rgba(0, 207, 255, 0.15);
+
+    border-radius: 8px;
+
+    color: var(--cinza);
+
+    outline: none;
+
+}
+
+#btn-copiar {
+
+    padding: 12px 18px;
+
+    background: transparent;
+
+    border:
+        1px solid var(--azul);
+
+    border-radius: 8px;
+
+    color: var(--azul);
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+#btn-copiar:hover {
+
+    background: var(--azul);
+
+    color: #001116;
+
+    box-shadow:
+        0 0 20px rgba(0, 207, 255, 0.3);
+
+}
+
+
+/* =========================================
+   EXPLICAÇÃO DO MVP
+========================================= */
+
+.mvp-explicacao {
+
+    max-width: 850px;
+
+    margin: 35px auto 0;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 207, 255, 0.03);
+
+    border:
+        1px solid rgba(0, 207, 255, 0.15);
+
+    border-radius: 16px;
+
+    text-align: left;
+
+}
+
+.mvp-explicacao h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--azul);
+
+    font-size: 1.3rem;
+
+}
+
+.mvp-explicacao p {
+
+    margin-bottom: 12px;
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+}
+
+.mvp-explicacao p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   VÍDEO / PITCH
+========================================= */
+
+.video-container {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 15px;
+
+    background:
+        rgba(10, 20, 28, 0.9);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(0, 207, 255, 0.08);
+
+}
+
+.video-container video {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 600px;
+
+    border-radius: 12px;
+
+    background: #000;
+
+}
+
+
+/* =========================================
+   ODS E IMPACTO
+========================================= */
+
+.tabela-ods {
+
+    min-width: 700px;
+
+}
+
+.tabela-ods th:first-child {
+
+    width: 30%;
+
+}
+
+.impacto-resumo {
+
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =========================================
+   EQUIPE
+========================================= */
+
+.equipe {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+.membro {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 28, 0.95),
+            rgba(5, 10, 15, 0.98)
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+.membro:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--azul);
+
+}
+
+.membro img {
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--azul);
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 0 25px rgba(0, 207, 255, 0.15);
+
+}
+
+.membro h3 {
+
+    color: var(--branco);
+
+    margin-bottom: 8px;
+
+}
+
+.membro p {
+
+    color: var(--azul);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 5px;
+
+}
+
+.membro span {
+
+    color: var(--cinza);
+
+    font-size: 0.85rem;
+
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.rodape {
+
+    padding: 45px 7%;
+
+    text-align: center;
+
+    background: #030507;
+
+    border-top:
+        1px solid rgba(0, 207, 255, 0.12);
+
+}
+
+.rodape .logo {
+
+    margin-bottom: 15px;
+
+}
+
+.rodape p {
+
+    color: var(--cinza);
+
+    font-size: 0.85rem;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — 1000px
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .cabecalho {
+
+        padding: 18px 4%;
+
+    }
+
+    .navegacao {
+
+        gap: 15px;
+
+    }
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .estatisticas {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .graficos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .impacto-resumo {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .canvas-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — 750px
+========================================= */
+
+@media (max-width: 750px) {
+
+    .cabecalho {
+
+        position: relative;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    .navegacao {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px 18px;
+
+    }
+
+    .hero {
+
+        min-height: 75vh;
+
+        padding: 70px 5%;
+
+    }
+
+    .secao {
+
+        padding: 75px 5%;
+
+    }
+
+    .cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .swot {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .equipe {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 450px;
+
+    }
+
+    .canvas-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .subtitulo-modelo h3 {
+
+        font-size: 1.6rem;
+
+    }
+
+    .fluxo-seta {
+
+        transform: rotate(90deg);
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — MVP
+========================================= */
+
+@media (max-width: 600px) {
+
+    .mvp-demo .mvp-conteudo {
+
+        padding: 30px 20px;
+
+    }
+
+    .mvp-cabecalho {
+
+        padding: 17px 18px;
+
+    }
+
+    .mvp-demo .mvp-conteudo h3 {
+
+        font-size: 1.3rem;
+
+    }
+
+    .link-gerado {
+
+        flex-direction: column;
+
+    }
+
+    #btn-copiar {
+
+        width: 100%;
+
+    }
+
+    .mvp-explicacao {
+
+        padding: 22px;
+
+    }
+
+    .mvp-explicacao h3 {
+
+        font-size: 1.15rem;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE — 500px
+========================================= */
+
+@media (max-width: 500px) {
+
+    .cabecalho {
+
+        padding: 15px 4%;
+
+    }
+
+    .logo {
+
+        font-size: 1.3rem;
+
+    }
+
+    .navegacao a {
+
+        font-size: 0.78rem;
+
+    }
+
+    .hero h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+    .hero p {
+
+        font-size: 0.95rem;
+
+    }
+
+    .titulo-secao {
+
+        margin-bottom: 40px;
+
+    }
+
+    .titulo-secao h2 {
+
+        font-size: 2rem;
+
+    }
+
+    .estatisticas {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .estatistica strong {
+
+        font-size: 2.2rem;
+
+    }
+
+    .fluxo {
+
+        flex-direction: column;
+
+    }
+
+    .fluxo-item {
+
+        width: 100%;
+
+    }
+
+    .fluxo-seta {
+
+        transform: rotate(90deg);
+
+    }
+
+    .swot-card {
+
+        padding: 22px;
+
+    }
+
+    .canvas-area,
+    .swot-area {
+
+        margin-top: 50px;
+
+    }
+
+    .canvas-bloco {
+
+        padding: 22px;
+
+    }
+
+    .card-grafico {
+
+        padding: 15px;
+
+    }
+
+    .grafico {
+
+        min-height: 260px;
+
+    }
+
+    .membro img {
+
+        width: 130px;
+
+        height: 130px;
+
+    }
+
+}
